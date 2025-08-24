@@ -8,7 +8,6 @@ Just enter your trip details (destination, budget, style, dietary preferences, p
 ---
 
 ## 🌐 Live Demo  
-🔗 [https://journiiii.netlify.app/](https://journiiii.netlify.app/)
 🔗 git clone - <https://tanishka826.github.io/Skillcred-Project/>
 
  🚀 Features  
