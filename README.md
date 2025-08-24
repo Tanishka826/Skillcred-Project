@@ -9,7 +9,7 @@ Just enter your trip details (destination, budget, style, dietary preferences, p
 
 ## 🌐 Live Demo  
 🔗 [https://journiiii.netlify.app/](https://journiiii.netlify.app/)
-
+🔗 git clone - <https://github.com/Tanishka826/Skillcred-Project>
 
  🚀 Features  
 - ✈️ Smart Trip Setup – Enter destination, number of days, budget, travel style, diet, and pace.  
@@ -17,11 +17,13 @@ Just enter your trip details (destination, budget, style, dietary preferences, p
 - 🗺️ Google Maps Integration – Quick map links to explore suggested places.  
 - ⚡ Customizable – Reset or modify your inputs anytime.  
 - 🎨 Modern UI – Clean, responsive, and user-friendly design.  
+-  ⁠🍽️ Custom Dining- – diet preferences (vegetarian, halal, etc.) included in recommendations.
+-  AI-powered planner (bring your own API key + model)
 
 
 ## 🛠️ Tech Stack  
 - Frontend: React + TypeScript (Vite)  
-- Styling: TailwindCSS  
+- Styling: TailwindCSS (glassmorphism, neon glow, animations)
 - AI Integration: Google Gemini API  
 - Hosting: Netlify  
 
@@ -34,9 +36,3 @@ Just enter your trip details (destination, budget, style, dietary preferences, p
 
 
 
-## 📦 Installation & Setup  
-
-1. Clone the repository  
-   bash
-   git clone <https://tanishka826.github.io/Skillcred-Project/>
-   cd journII
