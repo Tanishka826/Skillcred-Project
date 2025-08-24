@@ -9,7 +9,7 @@ Just enter your trip details (destination, budget, style, dietary preferences, p
 
 ## 🌐 Live Demo  
 🔗 [https://journiiii.netlify.app/](https://journiiii.netlify.app/)
-🔗 git clone - <https://github.com/Tanishka826/Skillcred-Project>
+🔗 git clone - <https://tanishka826.github.io/Skillcred-Project/>
 
  🚀 Features  
 - ✈️ Smart Trip Setup – Enter destination, number of days, budget, travel style, diet, and pace.  
