@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AstraVoyage Planner</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Scene background that changes per city -->
+  <div id="scene" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="shell header">
+    <div class="brand">
+      <svg class="logo" width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M3 12c7-1 11-5 18-9-3 8-8 13-18 18 6-2 10-5 15-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h1>JOURNII</h1>
+    </div>
+    <p class="tag">Plan smarter trips with quick, map-ready itineraries.</p>
+  </header>
+
+  <main class="shell layout">
+    <!-- Controls -->
+    <aside class="panel panel--controls">
+      <section class="panel__body">
+        <h2 class="panel__title">Trip setup</h2>
+
+        <div class="grid grid--two">
+          <div class="field">
+            <label class="label" for="city">Destination</label>
+            <input class="control" id="city" placeholder="e.g., Tokyo" />
+          </div>
+          <div class="field">
+            <label class="label" for="days">Days</label>
+            <input class="control" id="days" type="number" min="1" max="30" placeholder="e.g., 4" />
+          </div>
+        </div>
+
+        <div class="grid grid--two">
+          <div class="field">
+            <label class="label" for="budget">Budget</label>
+            <select class="control" id="budget">
+              <option value="">Select…</option>
+              <option>low</option>
+              <option>medium</option>
+              <option>high</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="label" for="style">Style</label>
+            <select class="control" id="style">
+              <option>balanced</option>
+              <option>family</option>
+              <option>adventure</option>
+              <option>luxury</option>
+              <option>budget</option>
+              <option>cultural</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid--two">
+          <div class="field">
+            <label class="label" for="diet">Diet (optional)</label>
+            <input class="control" id="diet" placeholder="e.g., vegetarian, halal, no seafood" />
+            <div class="hint">We’ll use this for restaurant searches.</div>
+          </div>
+          <div class="field">
+            <label class="label" for="pace">Pace</label>
+            <select class="control" id="pace">
+              <option>moderate</option>
+              <option>relaxed</option>
+              <option>packed</option>
+            </select>
+          </div>
+        </div>
+
+        <details class="drawer">
+          <summary class="drawer__summary">Advanced: Bring your own AI</summary>
+          <div class="grid grid--two">
+            <div class="field">
+              <label class="label" for="aiEndpoint">Chat Completions Endpoint</label>
+              <input class="control" id="aiEndpoint" placeholder="https://api.openai.com/v1/chat/completions" />
+            </div>
+            <div class="field">
+              <label class="label" for="aiModel">Model</label>
+              <input class="control" id="aiModel" value="gpt-4o-mini" />
+            </div>
+          </div>
+          <div class="grid grid--two">
+            <div class="field">
+              <label class="label" for="aiKey">Bearer Token</label>
+              <input class="control" id="aiKey" type="password" placeholder="Your API key (browser-visible)" />
+            </div>
+            <div class="field">
+              <label class="label" for="maxTokens">Max tokens</label>
+              <input class="control" id="maxTokens" type="number" value="900" />
+            </div>
+          </div>
+          <label class="switch">
+            <input id="useAI" type="checkbox" />
+            <span>Use AI instead of the local generator</span>
+          </label>
+          <p class="hint">Keys run <b>only in your browser</b>. Use a server proxy in production.</p>
+        </details>
+
+        <div class="actions">
+          <button class="btn btn--prime" id="generate">Create itinerary</button>
+          <button class="btn btn--ghost" id="copyPrompt">Copy AI prompt</button>
+          <button class="btn btn--ghost" id="clear">Reset</button>
+        </div>
+        <pre class="log" id="log" hidden></pre>
+      </section>
+    </aside>
+
+    <!-- Results -->
+    <section class="panel panel--results">
+      <header class="panel__head">
+        <h2 class="panel__title">Your plan</h2>
+        <span class="kbd">Tip: links open Google Maps searches.</span>
+      </header>
+      <div id="output" class="itinerary">
+        <div class="placeholder">
+          <div class="pulse"></div>
+          <p>Fill the form and hit <b>Create itinerary</b>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <small>HTML/CSS/JS only • Map links use Google Maps search • Copy text anytime</small>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
